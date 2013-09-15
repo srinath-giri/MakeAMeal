@@ -14,30 +14,30 @@
 ActiveRecord::Schema.define(:version => 20130908232111) do
 
   create_table "customers", :force => true do |t|
-    t.string "name"
-    t.string "address"
-    t.string "phone"
-    t.string "email"
+    t.string   "name"
+    t.string   "address"
+    t.string   "phone"
+    t.string   "email"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "payment_options", :force => true do |t|
-    t.integer "customer_id"
-    t.string "type"
-    t.string "account_card_number"
-    t.string "routing_cvv_number"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "customer_id"
+    t.string   "type"
+    t.string   "account_card_number"
+    t.string   "routing_cvv_number"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
   create_table "recipes", :force => true do |t|
-    t.string "name"
-    t.string "ingredients"
-    t.float "price"
-    t.string "category"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "name"
+    t.string   "ingredients"
+    t.float    "price"
+    t.string   "category"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end

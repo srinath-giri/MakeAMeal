@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  [name: 
+  name:
+  ingredients:
   price: 
   category: 
 
 two:
-  [name: 
+  name:
+  ingredients:
   price: 
   category: 
