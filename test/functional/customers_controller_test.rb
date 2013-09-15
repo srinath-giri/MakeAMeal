@@ -3,6 +3,7 @@ require 'test_helper'
 class CustomersControllerTest < ActionController::TestCase
   setup do
     @customer = customers(:one)
+    @customer.email = 'three@gmail.com'
   end
 
   test "should get index" do
