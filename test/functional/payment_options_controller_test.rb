@@ -3,6 +3,7 @@ require 'test_helper'
 class PaymentOptionsControllerTest < ActionController::TestCase
   setup do
     @payment_option = payment_options(:one)
+    @customer = customers(:one)
   end
 
   test "should get index" do

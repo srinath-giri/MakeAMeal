@@ -4,4 +4,5 @@ class PaymentOption < ActiveRecord::Base
   validates :routing_cvv_number, :numericality => {:only_integer => true}, :length => {:maximum => 10 }
   validates :payment_type, :inclusion => { in: %w(Account Card)}
   belongs_to :customer
+  validates_presence_of :customer
 end

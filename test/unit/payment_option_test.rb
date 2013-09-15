@@ -3,6 +3,7 @@ require 'test_helper'
 class PaymentOptionTest < ActiveSupport::TestCase
   setup do
     @payment_option = payment_options(:one)
+    @customer = customers(:one)
   end
 
   test "account or card number should be in digits only" do
@@ -36,5 +37,14 @@ class PaymentOptionTest < ActiveSupport::TestCase
     assert p.save
     p.payment_type = 'Cheque'
     assert !p.save
+  end
+
+  test "payment option should belong to a customer" do
+    p = @payment_option
+    c = @customer
+    p.customer = nil
+    assert !p.save
+    p.customer = @customer
+    assert p.save
   end
 end

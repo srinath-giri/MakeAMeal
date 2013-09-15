@@ -41,6 +41,7 @@ class PaymentOptionsController < ApplicationController
   # POST /payment_options.json
   def create
     @payment_option = PaymentOption.new(params[:payment_option])
+    @payment_option.customer = Customer.create(:email => "xxxx")
 
     respond_to do |format|
       if @payment_option.save

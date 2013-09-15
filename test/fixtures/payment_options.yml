@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  customer: one
   payment_type: Account
   account_card_number: 1234567890
   routing_cvv_number: 000111222
 
 two:
+  customer: two
   payment_type: Card
   account_card_number: 1234567812345678
   routing_cvv_number: 123
