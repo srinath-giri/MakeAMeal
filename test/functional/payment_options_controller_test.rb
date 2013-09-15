@@ -18,7 +18,7 @@ class PaymentOptionsControllerTest < ActionController::TestCase
 
   test "should create payment_option" do
     assert_difference('PaymentOption.count') do
-      post :create, payment_option: {account_card_number: @payment_option.account_card_number, routing_cvv_number: @payment_option.routing_cvv_number, type: @payment_option.type}
+      post :create, payment_option: {account_card_number: @payment_option.account_card_number, routing_cvv_number: @payment_option.routing_cvv_number, payment_type: @payment_option.payment_type}
     end
 
     assert_redirected_to payment_option_path(assigns(:payment_option))
@@ -35,7 +35,7 @@ class PaymentOptionsControllerTest < ActionController::TestCase
   end
 
   test "should update payment_option" do
-    put :update, id: @payment_option, payment_option: {account_card_number: @payment_option.account_card_number, routing_cvv_number: @payment_option.routing_cvv_number, type: @payment_option.type}
+    put :update, id: @payment_option, payment_option: {account_card_number: @payment_option.account_card_number, routing_cvv_number: @payment_option.routing_cvv_number, payment_type: @payment_option.payment_type}
     assert_redirected_to payment_option_path(assigns(:payment_option))
   end
 

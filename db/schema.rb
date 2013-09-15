@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130908232111) do
+ActiveRecord::Schema.define(:version => 20130915214135) do
 
   create_table "customers", :force => true do |t|
     t.string   "name"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20130908232111) do
 
   create_table "payment_options", :force => true do |t|
     t.integer  "customer_id"
-    t.string   "type"
+    t.string   "payment_type"
     t.string   "account_card_number"
     t.string   "routing_cvv_number"
     t.datetime "created_at",          :null => false
