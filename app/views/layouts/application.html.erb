@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+  <title>MakeAMeal</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div style="background-color: darkmagenta; margin: 30px; padding-left: 100px; padding-right: 100px; padding-top: 30px; padding-bottom: 30px;">
+  <div id="header">
+    <table>
+      <tr>
+        <td><%= link_to image_tag("MakeAMeal.png") %></td>
+        <td style="align: right">
+          <p style="text-align: right">Login | Sign Up | Offers | Stores Near U | Feedback</p>
+
+          <p><%= link_to image_tag("Strip.png") %></p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <%= yield %>
+</div>
+
+<div id="footer" style="text-align: center;">
+  <%= link_to "TERMS OF USE", "#" %> |
+  <%= link_to "OUR STORY", "#" %> |
+  <%= link_to "FRANCHISE", "#" %>
+</div>
+
+</body>
+</html>

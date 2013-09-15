@@ -1,0 +1,17 @@
+<div style="text-align: center  ">
+  <%= link_to image_tag("Review.png") %>
+  <%= link_to image_tag("Slider.png") %>
+  <div>
+    <table>
+      <tr>
+        <td><%= link_to image_tag("Pizza.jpg", :width => 300, :height => 150), pizzas_path %></td>
+        <td><%= link_to image_tag("Pasta.jpg", :width => 300, :height => 150), pastas_path %></td>
+        <td rowspan="2"><%= link_to image_tag("HotDeals.png", :width => 300, :height => 300) %></td>
+      </tr>
+      <tr>
+        <td><%= link_to image_tag("Burger.jpg", :width => 300, :height => 150), burgers_path %></td>
+        <td><%= link_to image_tag("Noodles.jpg", :width => 300, :height => 150), noodles_path %></td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<script type="text/javascript">
+    function calculateTotal() {
+        var total = 0.0;
+        for (var i = 0; i <<%= @recipes.size%>; i++) {
+            var quantity = parseFloat(document.getElementById('quantity' + i).value);
+            var price = parseFloat(document.getElementById('price' + i).value);
+            total += quantity * price;
+        }
+        console.log(total);
+        document.getElementById('total').value = total;
+    }
+</script>
+
+<form>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+    </tr>
+
+    <% @recipes.each_index do |index|
+      recipe = @recipes.fetch(index)
+    %>
+        <tr>
+          <td><%= recipe.name %>
+            <br/>(<%= recipe.ingredients %>)
+          </td>
+          <td>$<input id="price<%= index %>" type="number" value="<%= recipe.price %>" disabled="disabled"/></td>
+          <td><input id="quantity<%= index %>" type="number" value="0" onchange="calculateTotal(<%=recipe.id%>);"/>
+          </td>
+        </tr>
+    <% end %>
+
+    <tr>
+      <td></td>
+      <td style="text-align: right">Total: $</td>
+      <td><input id="total" type="number" disabled="disabled" value="0"/></td>
+    </tr>
+  </table>
+</form>

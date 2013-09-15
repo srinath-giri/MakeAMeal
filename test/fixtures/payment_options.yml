@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type: 
+  account_card_number: MyString
+  routing_cvv_number: MyString
+
+two:
+  type: 
+  account_card_number: MyString
+  routing_cvv_number: MyString

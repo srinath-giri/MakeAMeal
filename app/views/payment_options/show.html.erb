@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Type:</b>
+  <%= @payment_option.type %>
+</p>
+
+<p>
+  <b>Account card number:</b>
+  <%= @payment_option.account_card_number %>
+</p>
+
+<p>
+  <b>Routing cvv number:</b>
+  <%= @payment_option.routing_cvv_number %>
+</p>
+
+
+<%= link_to 'Edit', edit_payment_option_path(@payment_option) %> |
+<%= link_to 'Back', payment_options_path %>
