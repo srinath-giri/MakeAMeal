@@ -1,7 +1,40 @@
 require 'test_helper'
 
 class PaymentOptionTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  setup do
+    @payment_option = payment_options(:one)
+  end
+
+  test "account or card number should be in digits only" do
+     p = @payment_option
+     p.account_card_number = '45AD'
+     assert !p.save
+  end
+
+  test "account or card number should have a maximum length of 16 digits" do
+    p = @payment_option
+    p.account_card_number = '12345678123456780'
+    assert !p.save
+  end
+
+  test "routing or cvv number should be in digits only" do
+    p = @payment_option
+    p.routing_cvv_number = '45AD'
+    assert !p.save
+  end
+
+  test "routing or cvv number should have a maximum length of 10 digits" do
+    p = @payment_option
+    p.routing_cvv_number = '12345678901'
+    assert !p.save
+  end
+
+  test "payment type should have be Account or Card only" do
+    p = @payment_option
+    assert p.save
+    p = payment_options(:two)
+    assert p.save
+    p.payment_type = 'Cheque'
+    assert !p.save
+  end
 end
