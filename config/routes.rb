@@ -9,6 +9,9 @@ MakeAMeal::Application.routes.draw do
   match 'recipes/noodles', to: 'recipes#noodles', :as => 'noodles', via: [:get]
   resources :recipes
 
+  match 'welcome/reviews', to: 'welcome#reviews', :as => 'reviews', via: [:get]
+  match 'welcome/reviews/:id', to: 'welcome#reviews', via: [:get]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
